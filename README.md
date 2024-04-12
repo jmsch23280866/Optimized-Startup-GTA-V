@@ -4,7 +4,7 @@ This PowerShell script is designed to automatically launch GTA 5. It requires Po
 
 ## Usage
 
-1. Download or copy the `Optimized Startup GTA V2.ps1` script file to your computer.
+1. Download or copy the `Optimized Startup GTA V.ps1` script file to your computer.
 2. Double-click to run or execute the script in PowerShell.
 
 ## Notes
