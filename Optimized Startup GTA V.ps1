@@ -1,21 +1,24 @@
+# 啟動 Rockstar Launcher
+$RockstarProcess = Start-Process -FilePath "C:\Program Files\Rockstar Games\Launcher\Launcher.exe" -PassThru
+
+# 等待直到 SocialClubHelper.exe 進程開始執行
+while (-not (Get-Process -Name "SocialClubHelper" -ErrorAction SilentlyContinue)) {
+    Start-Sleep -Seconds 1
+}
+
 # 啟動 GTA5
 Start-Process -FilePath "legendary" -ArgumentList "launch 9d2d0eb64d5c44529cece33fe2a46482 --check-updates" -PassThru
 
-# 等待 2 分鐘
-Start-Sleep -Seconds 120
-
-# 檢查 GTA5 是否已經啟動
-$gtaProcess = Get-Process -Name "GTA5" -ErrorAction SilentlyContinue
-if ($gtaProcess) {
-    # 如果 GTA5 已經啟動，則終止 EpicGamesLauncher.exe
-    $epicProcess = Get-Process -Name "EpicGamesLauncher" -ErrorAction SilentlyContinue
-    if ($epicProcess) {
-        Stop-Process -Name "EpicGamesLauncher" -Force
-    }
-
-    # 終止 PlayGTAV.exe
-    Stop-Process -Name "PlayGTAV" -Force
-
-    # 終止 RockstarErrorHandler.exe
-    Stop-Process -Name "RockstarErrorHandler" -Force
+# 等待直到 GTA5.exe 進程開始執行
+while (-not (Get-Process -Name "GTA5" -ErrorAction SilentlyContinue)) {
+    Start-Sleep -Seconds 1
 }
+
+# 終止 RockstarErrorHandler.exe
+Stop-Process -Name "RockstarErrorHandler" -ErrorAction SilentlyContinue
+
+# 終止 PlayGTAV.exe
+Stop-Process -Name "PlayGTAV" -ErrorAction SilentlyContinue
+
+# 終止 LauncherPatcher.exe
+Stop-Process -Name "LauncherPatcher" -ErrorAction SilentlyContinue
