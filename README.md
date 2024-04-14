@@ -1,6 +1,6 @@
 # Optimized Startup GTA V
 
-This PowerShell script is designed to automatically launch GTA V and kill unwarranted prosess
+This PowerShell script is designed to automatically launch GTA V via [Legendary game launcher](https://github.com/derrod/legendary) and kill unwarranted prosess
 1. RockstarErrorHandler.exe
 2. PlayGTAV.exe
 3. LauncherPatcher.exe
