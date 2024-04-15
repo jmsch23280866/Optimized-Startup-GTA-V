@@ -1,5 +1,5 @@
 # 啟動 Rockstar Launcher
-$RockstarProcess = Start-Process -FilePath "C:\Program Files\Rockstar Games\Launcher\Launcher.exe" -PassThru
+Start-Process -FilePath "C:\Program Files\Rockstar Games\Launcher\Launcher.exe" -PassThru
 
 # 等待直到 SocialClubHelper.exe 進程開始執行
 while (-not (Get-Process -Name "SocialClubHelper" -ErrorAction SilentlyContinue)) {
