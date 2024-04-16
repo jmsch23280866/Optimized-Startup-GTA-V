@@ -6,8 +6,11 @@ while (-not (Get-Process -Name "SocialClubHelper" -ErrorAction SilentlyContinue)
     Start-Sleep -Seconds 1
 }
 
+# 更新 GTA5
+Start-Process -FilePath "legendary" -ArgumentList "update 9d2d0eb64d5c44529cece33fe2a46482 -y" -Wait
+
 # 啟動 GTA5
-Start-Process -FilePath "legendary" -ArgumentList "launch 9d2d0eb64d5c44529cece33fe2a46482 --check-updates" -PassThru
+Start-Process -FilePath "legendary" -ArgumentList "launch 9d2d0eb64d5c44529cece33fe2a46482" -PassThru
 
 # 等待直到 GTA5.exe 進程開始執行
 while (-not (Get-Process -Name "GTA5" -ErrorAction SilentlyContinue)) {
