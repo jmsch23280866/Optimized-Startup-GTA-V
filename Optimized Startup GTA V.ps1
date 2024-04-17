@@ -1,3 +1,4 @@
+# (此腳本由ChatGPT協助撰寫)
 # 啟動 Rockstar Launcher
 Start-Process -FilePath "C:\Program Files\Rockstar Games\Launcher\Launcher.exe" -PassThru
 
