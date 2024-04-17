@@ -7,6 +7,9 @@ while (-not (Get-Process -Name "SocialClubHelper" -ErrorAction SilentlyContinue)
     Start-Sleep -Seconds 1
 }
 
+# 驗證 legendary
+Start-Process -FilePath "legendary" -ArgumentList "auth" -Wait
+
 # 更新 GTA5
 Start-Process -FilePath "legendary" -ArgumentList "update 9d2d0eb64d5c44529cece33fe2a46482 -y" -Wait
 
